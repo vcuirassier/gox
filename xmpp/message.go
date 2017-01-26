@@ -9,9 +9,10 @@ import (
 type ClientMessage struct {
 	XMLName xml.Name `xml:"jabber:client message"`
 	Packet
-	Subject string `xml:"subject,omitempty"`
-	Body    string `xml:"body,omitempty"`
-	Thread  string `xml:"thread,omitempty"`
+	Subject  string `xml:"subject,omitempty"`
+	Body     string `xml:"body,omitempty"`
+	Thread   string `xml:"thread,omitempty"`
+	InnerXML string `xml:",innerxml"`
 }
 
 // TODO: Func new message to create an empty message structure without the XML tag matching elements
