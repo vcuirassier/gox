@@ -59,6 +59,14 @@ func (iq *ClientIQ) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 				p = new(bindBind)
 			case "urn:xmpp:iot:control set":
 				p = new(iot.ControlSet)
+			case "http://jabber.org/protocol/disco#info query":
+				p = new(ServiceDiscovery)
+			case "urn:xmpp:blocking blocklist":
+				p = new(Blocklist)
+			case "urn:xmpp:blocking block":
+				p = new(Block)
+			case "urn:xmpp:blocking unblock":
+				p = new(Unblock)
 				// TODO: Add a default Type that passes RawXML
 			}
 			if p != nil {
